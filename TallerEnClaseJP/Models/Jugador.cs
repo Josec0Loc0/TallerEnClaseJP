@@ -1,12 +1,21 @@
-﻿namespace TallerEnClaseJP.Models
-{
-    public class Jugador
-    {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Posición { get; set; }
-        public int Edad { get; set; }
-        public string Titulos { get; set; }
+﻿using System.ComponentModel.DataAnnotations;
 
-    }
+public class Jugador
+{
+    [Key]
+    public int Id { get; set; }
+
+    [Required(ErrorMessage = "El nombre es obligatorio.")]
+    [StringLength(50, ErrorMessage = "El nombre no puede exceder los 50 caracteres.")]
+    public string Nombre { get; set; }
+
+    [Required(ErrorMessage = "La posición es obligatoria.")]
+    [StringLength(30, ErrorMessage = "La posición no puede exceder los 30 caracteres.")]
+    public string Posición { get; set; }
+
+    [Range(1, 100, ErrorMessage = "La edad debe estar entre 1 y 100 años.")]
+    public int Edad { get; set; }
+
+    [StringLength(200, ErrorMessage = "Los títulos no pueden exceder los 200 caracteres.")]
+    public string Titulos { get; set; }
 }
