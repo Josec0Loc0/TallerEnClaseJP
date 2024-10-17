@@ -18,4 +18,8 @@ public class Jugador
 
     [StringLength(200, ErrorMessage = "Los títulos no pueden exceder los 200 caracteres.")]
     public string Titulos { get; set; }
+
+    // Relación con Equipo
+    public int EquipoId { get; set; } // Clave foránea
+    public virtual Equipo Equipo { get; set; } // Navegación
 }

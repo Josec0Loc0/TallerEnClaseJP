@@ -17,4 +17,11 @@ public class Equipo
     public string TitulosEquipo { get; set; }
 
     public bool Extranjero { get; set; }
+
+    // Relación con Estadio
+    public int EstadioId { get; set; } // Clave foránea
+    public virtual Estadio Estadio { get; set; } // Navegación
+
+    // Colección de Jugadores
+    public virtual ICollection<Jugador> Jugadores { get; set; } // Relación 1 a muchos
 }
