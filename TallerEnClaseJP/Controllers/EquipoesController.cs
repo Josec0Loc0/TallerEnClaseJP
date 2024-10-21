@@ -47,7 +47,6 @@ namespace TallerEnClaseJP.Controllers
         // GET: Equipoes/Create
         public IActionResult Create()
         {
-            ViewData["EstadioId"] = new SelectList(_context.Set<Estadio>(), "IdEstadio", "CiudadEstadio");
             return View();
         }
 
